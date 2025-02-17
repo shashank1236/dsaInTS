@@ -1,0 +1,8 @@
+export * from "./algos"
+export { diagonalElementSum } from "./diagonalElementSum"
+export { uniqueArray } from "./DuplicateNumbers"
+export { fizzBuzz } from "./FizzBuzz"
+export { middleArr } from "./middleFunction"
+export { removeElement } from "./removeElementWithUsingExtraArrVariable"
+export { capitalizeSentence } from "./sentence-capitalization"
+export { findLowestTwoScores, findTopTwoScores } from "./FindTopLowestTwoScores"

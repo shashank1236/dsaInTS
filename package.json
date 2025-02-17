@@ -1,0 +1,15 @@
+{
+  "name": "javascript-dsa",
+  "version": "1.0.0",
+  "main": "O-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/webrtc": "^0.0.44",
+    "typescript": "^5.7.2"
+  }
+}
