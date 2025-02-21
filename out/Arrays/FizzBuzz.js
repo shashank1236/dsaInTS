@@ -20,3 +20,4 @@ var fizzBuzz = function (n) {
 };
 exports.fizzBuzz = fizzBuzz;
 (0, exports.fizzBuzz)();
+//# sourceMappingURL=FizzBuzz.js.map

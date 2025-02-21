@@ -11,3 +11,4 @@ var mergeSort = function (arr, type) {
     if (type === void 0) { type = "ASC"; }
 };
 exports.mergeSort = mergeSort;
+//# sourceMappingURL=merge.js.map

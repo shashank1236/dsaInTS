@@ -29,3 +29,4 @@ var capitalizeSentence = function (str) {
     return temp.join(" ");
 };
 exports.capitalizeSentence = capitalizeSentence;
+//# sourceMappingURL=sentence-capitalization.js.map

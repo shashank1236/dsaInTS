@@ -12,7 +12,7 @@
         "<node_internals>/**"
       ],
       "preLaunchTask": "tsc: build - tsconfig.json",
-      "program": "${workspaceFolder}\\Arrays\\ArrayInsert.ts",
+      "program": "${workspaceFolder}\\LinkedList\\linked-list.ts",
       "outFiles": [
         "${workspaceFolder}/out/**/*.js"
       ]

@@ -31,3 +31,4 @@ var findLowestTwoScores = function (arr) {
     return [top, second];
 };
 exports.findLowestTwoScores = findLowestTwoScores;
+//# sourceMappingURL=FindTopLowestTwoScores.js.map

@@ -29,3 +29,4 @@ var insertionSort = function (arr, type) {
     }
 };
 exports.insertionSort = insertionSort;
+//# sourceMappingURL=insertion.js.map

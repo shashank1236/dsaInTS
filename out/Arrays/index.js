@@ -31,3 +31,4 @@ Object.defineProperty(exports, "capitalizeSentence", { enumerable: true, get: fu
 var FindTopLowestTwoScores_1 = require("./FindTopLowestTwoScores");
 Object.defineProperty(exports, "findLowestTwoScores", { enumerable: true, get: function () { return FindTopLowestTwoScores_1.findLowestTwoScores; } });
 Object.defineProperty(exports, "findTopTwoScores", { enumerable: true, get: function () { return FindTopLowestTwoScores_1.findTopTwoScores; } });
+//# sourceMappingURL=index.js.map

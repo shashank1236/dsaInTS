@@ -9,3 +9,4 @@ var middleArr = function (arr) {
     return temp;
 };
 exports.middleArr = middleArr;
+//# sourceMappingURL=middleFunction.js.map

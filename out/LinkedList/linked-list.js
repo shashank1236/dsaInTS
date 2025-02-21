@@ -1,0 +1,147 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LinkedList = void 0;
+var node_1 = require("./node");
+var LinkedList = /** @class */ (function () {
+    /**
+     * Creates an instance of LinkedList.
+     * @param value The value to be added to the linked list.
+     */
+    function LinkedList(value) {
+        var newNode = new node_1.LLNode(value);
+        this.head = newNode;
+        this.tail = this.head;
+        this.length = 1;
+    }
+    /**
+     * Add a new node to the end of the linked list.
+     * @param value The value to be added to the linked list.
+     * @returns The updated linked list.
+     */
+    LinkedList.prototype.push = function (value) {
+        var newNode = new node_1.LLNode(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    };
+    /**
+     * Remove the first node in the linked list.
+     * @returns The item removed from the linked list.
+     */
+    LinkedList.prototype.pop = function () {
+        // if we have zero elements in node
+        if (!this.head)
+            return undefined;
+        var temp = this.head;
+        var pre = this.head;
+        while (temp.next) {
+            pre = temp;
+            temp = temp.next;
+        }
+        this.tail = pre;
+        this.tail.next = null;
+        this.length--;
+        // if we have no elements remaing after removing the node
+        if (this.length === 0) {
+            this.head = null, this.tail = null;
+        }
+        // returning item which is removed
+        return temp;
+    };
+    /**
+     * Adds a new node to the beginning of the linked list.
+     * @param value The new value to be added to the linked list.
+     * @returns The updated linked list.
+     */
+    LinkedList.prototype.unshift = function (value) {
+        var newNode = new node_1.LLNode(value);
+        // if we have zero elements in node
+        if (!this.head) {
+            this.tail = newNode;
+        }
+        else {
+            newNode.next = this.head;
+        }
+        this.head = newNode;
+        this.length++;
+        return this;
+    };
+    /**
+     * Removes the first node in the linked list.
+     *
+     * @returns The item removed from the linked list.
+     */
+    LinkedList.prototype.shift = function () {
+        if (!this.head)
+            return undefined;
+        var temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+        if (this.length === 0)
+            this.tail = null;
+        return temp;
+    };
+    /**
+     * Returns the node at the specified index in the linked list.
+     *
+     * @param index The index of the node to be returned.
+     * @returns The node at the specified index in the linked list.
+     */
+    LinkedList.prototype.get = function (index) {
+        if (index < 0 || index >= this.length)
+            return "index is greater than length of linked list";
+        var current = this.head;
+        var i = 0;
+        while (i < index) {
+            current = current.next;
+            i++;
+        }
+        return current;
+    };
+    /**
+     * Sets the value of the node at the specified index in the linked list.
+     * @param index The index of the node to be updated.
+     * @param value The new value of the node.
+     * @returns The linked list with the updated node.
+     */
+    LinkedList.prototype.set = function (index, value) {
+        var current = this.get(index);
+        if (current && typeof current === "object") {
+            current.value = value;
+            return true;
+        }
+        return;
+    };
+    LinkedList.prototype.insert = function (index, value) {
+        if (index === 0)
+            return this.unshift(value);
+        if (index === this.length)
+            return this.push(value);
+        if (index < 0 || index >= this.length)
+            return "index is greater than length of linked list";
+        var current = this.get(index - 1);
+        if (current && typeof current === "object") {
+            var newNode = new node_1.LLNode(value);
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    };
+    return LinkedList;
+}());
+exports.LinkedList = LinkedList;
+var ll = new LinkedList(7);
+// ll.push(4)
+ll.push(23);
+// ll.push(45)
+ll.insert(1, 45);
+// ll.set(3, "shashank")
+console.log(ll);
+//# sourceMappingURL=linked-list.js.map

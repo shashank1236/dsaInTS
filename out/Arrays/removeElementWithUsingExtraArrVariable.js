@@ -14,3 +14,4 @@ var removeElement = function (nums, val) {
     return j;
 };
 exports.removeElement = removeElement;
+//# sourceMappingURL=removeElementWithUsingExtraArrVariable.js.map

@@ -22,3 +22,4 @@ var ArrayInsert = function (position, element, arr) {
     return arr;
 };
 console.log(ArrayInsert(0, "shashank"));
+//# sourceMappingURL=ArrayInsert.js.map

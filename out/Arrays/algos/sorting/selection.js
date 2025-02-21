@@ -29,3 +29,4 @@ var selectionSortArr = function (arr, type) {
     }
 };
 exports.selectionSortArr = selectionSortArr;
+//# sourceMappingURL=selection.js.map

@@ -9,3 +9,4 @@ var diagonalElementSum = function (arr) {
     return sum;
 };
 exports.diagonalElementSum = diagonalElementSum;
+//# sourceMappingURL=diagonalElementSum.js.map
