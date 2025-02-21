@@ -1,3 +1,4 @@
+import { CustomException } from "../exception";
 import { LLNode } from "./node";
 
 export class LinkedList {
@@ -93,11 +94,13 @@ export class LinkedList {
   /**
    * Returns the node at the specified index in the linked list.
    *
+   * @throws CustomException If index is grater than linked list length
+   * 
    * @param index The index of the node to be returned.
    * @returns The node at the specified index in the linked list.
    */
-  get(index: number): LLNode | string {
-    if (index < 0 || index >= this.length) return "index is greater than length of linked list"
+  get(index: number): LLNode {
+    if (index < 0 || index >= this.length) throw new CustomException("Index is greater than length of Linked List")
     let current = this.head;
     let i = 0;
     while (i < index) {
@@ -109,11 +112,14 @@ export class LinkedList {
 
   /**
    * Sets the value of the node at the specified index in the linked list.
+   * 
+   * @throws CustomException If index is grater than linked list length
+   * 
    * @param index The index of the node to be updated.
    * @param value The new value of the node.
    * @returns The linked list with the updated node.
    */
-  set(index: number, value: string) {
+  set(index: number, value: string): Boolean {
     let current = this.get(index)
     if (current && typeof current === "object") {
       current.value = value
@@ -124,16 +130,19 @@ export class LinkedList {
 
   /**
    * Inserts new node with value at the specified index in the linked list.
+   * 
+   * @throws CustomException If index is grater than linked list length
+   * 
    * @param index The index of the node to be inserted.
    * @param value The value of the node.
    * @returns the updated linked list
    */
-  insert(index: number, value: string | number) {
+  insert(index: number, value: string | number): LinkedList {
     if (index === 0) return this.unshift(value)
 
     if (index === this.length) return this.push(value)
 
-    if (index < 0 || index >= this.length) return "index is greater than length of linked list"
+    if (index < 0 || index >= this.length) throw new CustomException("Index is greater than length of Linked List")
 
     let current = this.get(index - 1)
     if (current && typeof current === "object") {
@@ -146,13 +155,16 @@ export class LinkedList {
 
   /**
    * Removes the node at the specified index in the linked list.
+   * 
+   * @throws CustomException If index is grater than linked list length
+   * 
    * @param index The index of the node to be removed.
    * @returns the updated linked list
    */
-  remove(index: number): LLNode | string {
+  remove(index: number): LLNode {
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
-    if (index < 0 || index >= this.length) return "index is greater than length of linked list";
+    if (index < 0 || index >= this.length) throw new CustomException("Index is greater than length of Linked List")
     let current = this.get(index - 1);
     if (current && typeof current === "object") {
       let nodeToRemove = current.next;
@@ -167,7 +179,7 @@ export class LinkedList {
    * Reverses the linked list.
    * @returns the updated linked list
    */
-  reverse() {
+  reverse(): LinkedList {
     let temp = this.head;
     this.head = this.tail;
     this.tail = temp;
@@ -189,9 +201,8 @@ let ll = new LinkedList(7);
 // ll.push(4)
 ll.push(23)
 ll.push(45)
-// ll.insert(1, 45)
+ll.insert(1, 45)
 // ll.insert(1, 33)
 // ll.set(3, "shashank")
 // console.log(ll.remove(1))
-console.log(ll)
 console.log(ll.reverse())
